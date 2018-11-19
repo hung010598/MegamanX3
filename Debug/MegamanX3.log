@@ -1,0 +1,6 @@
+﻿  GameGlobal.cpp
+  Sprite.cpp
+d:\downloads\documents\hk1(2018-2019)\nm phát triển game\megaman\megamanx3\gamecomponents\sprite.cpp(21): warning C4101: 'result': unreferenced local variable
+d:\downloads\documents\hk1(2018-2019)\nm phát triển game\megaman\megamanx3\gamecomponents\sprite.cpp(136): warning C4244: 'argument': conversion from 'int' to 'FLOAT', possible loss of data
+  Generating Code...
+  MegamanX3.vcxproj -> D:\Downloads\Documents\HK1(2018-2019)\NM Phát Triển Game\Megaman\Debug\MegamanX3.exe
