@@ -1,6 +1,5 @@
 #include "Entity.h"
-
-
+#include "GameCollision.h"
 
 Entity::Entity()
 {
@@ -9,7 +8,7 @@ Entity::Entity()
 
 D3DXVECTOR3 Entity::GetPosition()
 {
-	return D3DXVECTOR3(posX, posY, 0);
+	return D3DXVECTOR3(posX, posY,0);
 }
 
 RECT Entity::GetBound()
@@ -24,6 +23,11 @@ RECT Entity::GetBound()
 	return bound;
 }
 
+void Entity::OnCollision(Entity *impactor, CollisionReturn data, Entity::SideCollisions side)
+{
+	vx = 0, vy = 0;
+}
+
 void Entity::OnSetPosition(D3DXVECTOR3 pos)
 {
 
@@ -31,6 +35,7 @@ void Entity::OnSetPosition(D3DXVECTOR3 pos)
 
 void Entity::Update(float dt)
 {
+	//velocity = pixel / s
 	posX += vx * dt;
 	posY += vy * dt;
 }
@@ -117,5 +122,3 @@ void Entity::AddVy(float vy)
 {
 	this->vy += vy;
 }
-
-

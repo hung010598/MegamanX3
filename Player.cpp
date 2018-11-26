@@ -1,7 +1,8 @@
 #include "Player.h"
 #include "PlayerStandingState.h"
 #include "PlayerJumpingState.h"
-
+#include "PlayerFallingState.h"
+#include "GameCollision.h"
 Player::Player()
 {
 	mAnimationStanding = new Animation("Resources/megaman/standingright.png", 3, 1, 3, 0.15f);
@@ -67,7 +68,10 @@ void Player::SetReverse(bool flag)
 {
 	mCurrentReverse = flag;
 }
-
+void Player::SetCamera(Camera *camera)
+{
+	this->mCamera = camera;
+}
 void Player::Draw(D3DXVECTOR3 position, RECT sourceRect, D3DXVECTOR2 scale, D3DXVECTOR2 transform, float angle, D3DXVECTOR2 rotationCenter, D3DXCOLOR colorKey)
 {
 	mCurrentAnimation->FlipVertical(mCurrentReverse);
@@ -100,7 +104,10 @@ void Player::SetState(PlayerState *newState)
 
 	mCurrentState = newState->GetState();
 }
-
+void Player::OnCollision(Entity *impactor, Entity::CollisionReturn data, Entity::SideCollisions side)
+{
+	this->mPlayerData->state->OnCollision(impactor, side, data);
+}
 RECT Player::GetBound()
 {
 	RECT rect;
@@ -150,13 +157,15 @@ Player::MoveDirection Player::getMoveDirection()
 
 	return MoveDirection::None;
 }
-
+void Player::OnNoCollisionWithBottom()
+{
+	if (mCurrentState != PlayerState::Jumping && mCurrentState != PlayerState::Falling)
+	{
+		this->SetState(new PlayerFallingState(this->mPlayerData));
+	}
+}
 PlayerState::StateName Player::getState()
 {
 	return mCurrentState;
 }
 
-void Player::SetCamera(Camera *camera)
-{
-	this->mCamera = camera;
-}

@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="212" height="16" tilewidth="32" tileheight="32" infinite="0" nextlayerid="5" nextobjectid="50">
- <tileset firstgid="1" name="mariotileset" tilewidth="32" tileheight="32" tilecount="924" columns="33">
-  <image source="C:/Users/Hung Tran/Downloads/asda/DirectXGame/DemoDirectX/Resources/mariotileset.png" width="1056" height="896"/>
+ <tileset firstgid="1" name="mariotileset" tilewidth="32" tileheight="32" tilecount="0" columns="33">
+  <image source="Resources/mariotileset.png" width="1056" height="896"/>
  </tileset>
  <layer id="1" name="background" width="212" height="16">
   <data encoding="base64" compression="zlib">
-   eJztlk1OwzAQhZ2s+RFwg+yBRRU4BOwqVlwBtl31GoBEOQcgAWcBbsJUykjD1P9xIU3fJ42axvb42ZkXxxg3j7UxC4qn2tMJAPCLT/LLF8W38s0b/X+n+HD4CX4DIA+bd0J+AwDYz6sY79xR2z3FQw9/cY6+efrMDf3Qf13lj03B9433TPdeKF4d65Brda2Xc/jypJDyjKAf+pl5la4/hz7feHKtpZ5X7Jwl5oL+/Dk3TT/7qaR+AMZG00WI+R997wGwqTQGfgKgBI2BnwAogfZSrp92RIyNC1rvZeQ7JKUvWKVxXMeMyx1bCpuXcv20S7FHsR8x/nBg9RbywA213Yp2n37dd4gMbf8Zmyds9aj122o3tpZL4fJSjH7tp+WZdCzCd0ZNaeyM4irzmabUQuxZEfKAbD+g3wnFkaN/KNd/13JIf4h16fd5Qt7T+l2166pn1t/3O0KO93lJz2/bf+2nuosTca31L5l2uWYRnmqp7UzEeeWvhVb0Y2LPCtmvVXPKdp5/4tHBfUvoz8Gmn4nRb8uzbv26/nhOfV/r99Wuvq/169pI1c/jQ16yvQv0/mvPsYdOxbVt/yvESjAlcmCPsQ/bHkyJHH3zjCG2aR9+AMW1lz8=
+   eJztlk1Ow0AMhSdZ8yPgBtkDiypwCNhVrLgCbLvqNYCbAMfDlWLJcud/XAjp+ySrUWbGfjPxS+ocAAAAAAAAebz1zr1TfPTtOVrztNSGfuh/7urXWvFJ+r8ovgP7kHsN7ZdzxPKUUPKMoB/6mW1Xrv+3kXu1el65NS1qQX99zf+mn/1kqR+ApTFMkWI7g/97AMyZwcFPAFgwOPgJAAu0l2r9dCJiaTzQfh8z3yElc8E+Q+A6Z13tWit8Xqr10ynFGcV5xvrLmfVbygMvNPYqxmP69dw5MrfzZ3ye8PWj1u/r3dxetiLkpRz92k+7b9K1iNg3ak1rNxRPlc+0pBdyvxUpD8jxC/pdUVwF5qdy/XUvp/SnOJT+mCfkPa0/1Luhfmb9rf8j5PqYl3R93/lrP/VT3IhrrX/Hesq1yfDUSGN3Iu67eC+MYh6T+62Q80ZVU45z/VVEB8+10F+DTz+To9+X59D6df9xTX1f64/1rr6v9eveKNXP61Ne8r0L9Plrz7GHbsW17/w7xF4wFjlwxjiHYw/GIkdrniXEMZ3DDwCFga8=
   </data>
  </layer>
- <layer id="2" name="coin" width="212" height="16">
+ <layer id="2" name="coin" width="212" height="16" visible="0">
   <data encoding="base64" compression="zlib">
    eJzt1kEKwDAIBMB8w/9/tOfQEhISabEzJ0FY1JOtAQAAAAD04u0BPm7nPqdvGwmZAADA3dPfHYNeFRm7jTJjoq7sL3sCAAAArLoA/4kBXw==
   </data>
  </layer>
- <layer id="3" name="brick" width="212" height="16">
+ <layer id="3" name="brick" width="212" height="16" visible="0">
   <data encoding="base64" compression="zlib">
    eJzt19sKgDAIANDh/v+fex0xa9FlUefAUGSor5YCAAAAAPBPsfOyv0/amhtJDgAA3K8m8UtiFc/06NWvuGOO9Jhx041qd3vrjgAAAAAzLWOaAEA=
   </data>
  </layer>
- <objectgroup id="4" name="object">
-  <object id="1" x="1" y="447" width="2206" height="61"/>
+ <objectgroup id="4" name="object" visible="0">
+  <object id="1" x="1" y="448" width="2206" height="60"/>
   <object id="2" x="896.667" y="385" width="62.3333" height="62"/>
   <object id="3" x="1217" y="353" width="62" height="94"/>
   <object id="4" x="1474" y="323" width="59" height="125"/>
@@ -27,7 +27,7 @@
   <object id="6" x="4290" y="416" width="27" height="31"/>
   <object id="7" x="4321.5" y="385.5" width="27" height="31"/>
   <object id="8" x="4352.75" y="352.75" width="27" height="31"/>
-  <object id="13" x="2274" y="449" width="476" height="70"/>
+  <object id="13" x="2274" y="448" width="476" height="71"/>
   <object id="16" x="4384" y="321" width="31" height="126"/>
   <object id="17" x="4480" y="323" width="31" height="122"/>
   <object id="18" x="4513" y="352" width="30" height="32"/>

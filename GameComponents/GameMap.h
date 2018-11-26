@@ -1,41 +1,58 @@
 #pragma once
+#ifndef __GAME_MAP__
+#define __GAME_MAP__
 
 #include <d3dx9.h>
 #include <d3d9.h>
 #include <vector>
 
-#include "Sprite.h"
+#include "../GameComponents/Sprite.h"
 #include "../MapReader/Tmx.h.in"
+#include "Camera.h"
 #include "GameGlobal.h"
-#include "../GameComponents/Camera.h"
+#include "../GameCollision.h"
+#include "../QuadTree.h"
+#include "../Map.h"
 
 class GameMap
 {
 public:
+	GameMap(const char* filePath);
+	void SetCamera(Camera* camera);
+	void Update(float dt);
+	void Draw();
+	Tmx::Map* GetMap();
+	RECT GetWorldMapBound();
+	int GetWidth();
+	int GetHeight();
+	int GetTileWidth();
+	int GetTileHeight();
+	std::map<int, Sprite*> getListTileSet();
 
-    GameMap(const char* filePath);
+	bool IsBoundLeft(); //kiem tra luc nay Camera o vi bien ben trai so voi WorldMap
+	bool IsBoundRight(); // kiem tra xem co o vi tri bien ben phai worldmap khong
+	bool IsBoundTop(); // kiem tra xem co o vi tri bien ben trai worldmap khong
+	bool IsBoundBottom(); // kiem tra xem co o vi tri bien ben phai worldmap khong
+	~GameMap();
 
-    Tmx::Map* GetMap();
+	std::vector<Map*> GetListMap();
 
-    int GetWidth();
-    int GetHeight();
-    int GetTileWidth();
-    int GetTileHeight();
-
-    void SetCamera(Camera *camera);
-
-    void Draw();    
-
-    ~GameMap();
+	QuadTree* GetQuadTree();
 
 private:
-    void LoadMap(const char* filePath);
+	void LoadMap(const char* filePath);
+	bool isContain(RECT rect1, RECT rect2);
+	Tmx::Map                        *mMap;
+	std::map<int, Sprite*>          mListTileset;
+	LPD3DXSPRITE                    mSpriteHandler;
+	Camera                          *mCamera;
+	QuadTree                        *mQuadTree;
+	std::vector<Map*>               mListMap;
 
-    bool isContain(RECT rect1, RECT rect2);
-
-    Tmx::Map                        *mMap;
-    std::map<int, Sprite*>          mListTileset;
-    Camera *mCamera;
+	
 };
+
+#endif
+
 
 

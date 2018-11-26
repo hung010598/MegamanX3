@@ -1,5 +1,5 @@
-#pragma once
-
+#ifndef __SCENE_MANAGER__
+#define __SCENE_MANAGER__
 #include "../GameComponents/Scene.h"
 
 class SceneManager
@@ -17,4 +17,4 @@ private:
     static SceneManager     *mInstance;
     Scene                   *mCurrentScene;    
 };
-
+#endif

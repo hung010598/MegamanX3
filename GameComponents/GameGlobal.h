@@ -1,5 +1,8 @@
 ﻿#pragma once
 
+#ifndef __GAME_GLOBAL__
+#define __GAME_GLOBAL__
+
 #include <d3dx9.h>
 #include <d3d9.h>
 #include <Windows.h>
@@ -39,6 +42,6 @@ private:
     static int mWidth, mHeight; //size của cửa sổ
     static LPDIRECT3DDEVICE9 mDevice; //device directX hiện tại
 };
-
+#endif
 
 

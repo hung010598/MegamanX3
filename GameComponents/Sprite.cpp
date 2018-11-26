@@ -26,7 +26,7 @@ void Sprite::InitWithSprite(const char* filePath, RECT sourceRect, int width, in
     mTranslation = D3DXVECTOR2(0, 0);
     mScale = D3DXVECTOR2(0, 1);
     mSourceRect = sourceRect;
-    mScale.x = mScale.y = 1;
+	mScale.x = mScale.y = 1;
 
     D3DXGetImageInfoFromFileA(filePath, &mImageInfo);
 
@@ -95,7 +95,7 @@ int Sprite::GetWidth()
 }
 
 int Sprite::GetHeight()
-{
+{ 
     return mHeight;
 }
 

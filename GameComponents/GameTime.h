@@ -1,5 +1,6 @@
 #pragma once
-
+#ifndef __GAME_TIME__
+#define __GAME_TIME__
 
 #include <Windows.h>
 
@@ -16,6 +17,6 @@ private:
     LARGE_INTEGER mStartTime, mEndTime, mDelta, mClockRate;
     static GameTime *mInstance;
 };
-
+#endif
 
 

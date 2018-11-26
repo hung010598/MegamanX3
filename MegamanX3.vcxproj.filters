@@ -55,6 +55,15 @@
     <Filter Include="Framework\GameObjects\Player">
       <UniqueIdentifier>{4dba5376-edbe-4cb3-baa2-b5570de734fa}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Framework\GameObjects\MapObjects">
+      <UniqueIdentifier>{65a0012e-f9d6-4ab8-b036-fb8a8d17faa0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\GameComponents\QuadTree">
+      <UniqueIdentifier>{aa01d04f-42f4-4101-9553-b93a7b9bae46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\GameComponents\Collision">
+      <UniqueIdentifier>{85f2401a-2e31-49c4-abf1-ce742c88ec27}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -173,6 +182,18 @@
     </ClCompile>
     <ClCompile Include="PlayerFallingState.cpp">
       <Filter>Framework\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Framework\GameObjects\MapObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="QuadTree.cpp">
+      <Filter>Framework\GameComponents\QuadTree</Filter>
+    </ClCompile>
+    <ClCompile Include="GameCollision.cpp">
+      <Filter>Framework\GameComponents\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Framework\GameObjects\MapObjects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -301,6 +322,18 @@
     </ClInclude>
     <ClInclude Include="PlayerFallingState.h">
       <Filter>Framework\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Framework\GameObjects\MapObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="QuadTree.h">
+      <Filter>Framework\GameComponents\QuadTree</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCollision.h">
+      <Filter>Framework\GameComponents\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>Framework\GameObjects\MapObjects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

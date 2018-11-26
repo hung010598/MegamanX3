@@ -1,4 +1,5 @@
 #include "DemoScene.h"
+#include "../GameDefine.h"
 
 DemoScene::DemoScene()
 {
@@ -10,22 +11,27 @@ void DemoScene::LoadContent()
     //set mau backcolor cho scene o day la mau xanh
     mBackColor = 0x0b032d;
 
-	mMap = new GameMap("Resources/BlastHornet.tmx");
+	mMap = new GameMap("Resources/MegamanX3Map.tmx");
 
 	mCamera = new Camera(GameGlobal::GetWidth(), GameGlobal::GetHeight());
-	mCamera->SetPosition(36, mMap->GetHeight() / 2 - GameGlobal::GetHeight() / 4 );
+	mCamera->SetPosition(GameGlobal::GetWidth() / 2, GameGlobal::GetHeight() / 2);
 
 	mMap->SetCamera(mCamera);
 
 	mPlayer = new Player();
-	mPlayer->SetPosition(36, mMap->GetHeight() / 2 - GameGlobal::GetHeight() / 4);
+	mPlayer->SetPosition(GameGlobal::GetWidth()/2, 980);
 	mPlayer->SetCamera(mCamera);
 
 }
 
 void DemoScene::Update(float dt)
 {
+	checkCollision();
+
+	mMap->Update(dt);
+
 	mPlayer->HandleKeyboard(keys);
+
 	mPlayer->Update(dt);
 
 	CheckCameraAndWorldMap();
@@ -85,4 +91,50 @@ void DemoScene::CheckCameraAndWorldMap()
 		mCamera->SetPosition(mCamera->GetPosition().x,
 			mMap->GetHeight() - mCamera->GetHeight() / 2);
 	}
+}
+void DemoScene::checkCollision()
+{
+	/*su dung de kiem tra xem khi nao mario khong dung tren 1 object hoac
+	dung qua sat mep trai hoac phai cua object do thi se chuyen state la falling*/
+	int widthBottom = 0;
+
+	vector<Entity*> listCollision;
+
+	mMap->GetQuadTree()->getEntitiesCollideAble(listCollision, mPlayer);
+
+	for (size_t i = 0; i < listCollision.size(); i++)
+	{
+		Entity::CollisionReturn r = GameCollision::RecteAndRect(mPlayer->GetBound(),
+			listCollision.at(i)->GetBound());
+
+		if (r.IsCollided)
+		{
+			//lay phia va cham cua Entity so voi Player
+			Entity::SideCollisions sidePlayer = GameCollision::getSideCollision(mPlayer, r);
+
+			//lay phia va cham cua Player so voi Entity
+			Entity::SideCollisions sideImpactor = GameCollision::getSideCollision(listCollision.at(i), r);
+
+			//goi den ham xu ly collision cua Player va Entity
+			mPlayer->OnCollision(listCollision.at(i), r, sidePlayer);
+			listCollision.at(i)->OnCollision(mPlayer, r, sideImpactor);
+
+			//kiem tra neu va cham voi phia duoi cua Player 
+			if (sidePlayer == Entity::Bottom || sidePlayer == Entity::BottomLeft
+				|| sidePlayer == Entity::BottomRight)
+			{
+				//kiem cha do dai ma mario tiep xuc phia duoi day
+				int bot = r.RegionCollision.right - r.RegionCollision.left;
+
+				if (bot > widthBottom)
+					widthBottom = bot;
+			}
+		}
+	}
+
+	//Neu mario dung ngoai mep thi luc nay cho mario rot xuong duoi dat    
+	/*if (widthBottom < Define::PLAYER_BOTTOM_RANGE_FALLING)
+	{
+		mPlayer->OnNoCollisionWithBottom();
+	}*/
 }

@@ -26,13 +26,13 @@ public:
 	void OnMouseDown(float x, float y);
 
 protected:
+	void checkCollision();
 	void CheckCameraAndWorldMap();
 
 	GameMap *mMap;
 	Camera *mCamera;
-	Player* mPlayer;
-	std::map <int, bool> keys;
+	Player *mPlayer;
 
-	float mTimeCounter;
+	std::map<int, bool> keys;
 };
 

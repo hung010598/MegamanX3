@@ -84,6 +84,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>d3d9.lib;d3dx9.lib;dxguid.lib;winmm.lib;dinput8.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -124,6 +125,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="GameCollision.cpp" />
     <ClCompile Include="GameComponents\Animation.cpp" />
     <ClCompile Include="GameComponents\Camera.cpp" />
     <ClCompile Include="GameComponents\Game.cpp" />
@@ -133,7 +135,9 @@
     <ClCompile Include="GameComponents\Scene.cpp" />
     <ClCompile Include="GameComponents\Sprite.cpp" />
     <ClCompile Include="GameControllers\SceneManager.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Map.cpp" />
     <ClCompile Include="MapReader\base64.cpp" />
     <ClCompile Include="MapReader\miniz.c" />
     <ClCompile Include="MapReader\tinyxml2.cpp" />
@@ -161,10 +165,12 @@
     <ClCompile Include="PlayerRunningState.cpp" />
     <ClCompile Include="PlayerStandingState.cpp" />
     <ClCompile Include="PlayerState.cpp" />
+    <ClCompile Include="QuadTree.cpp" />
     <ClCompile Include="Scenes\DemoScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="GameCollision.h" />
     <ClInclude Include="GameComponents\Animation.h" />
     <ClInclude Include="GameComponents\Camera.h" />
     <ClInclude Include="GameComponents\Game.h" />
@@ -175,6 +181,8 @@
     <ClInclude Include="GameComponents\Sprite.h" />
     <ClInclude Include="GameControllers\SceneManager.h" />
     <ClInclude Include="GameDefine.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Map.h" />
     <ClInclude Include="MapReader\base64.h" />
     <ClInclude Include="MapReader\tinyxml2.h" />
     <ClInclude Include="MapReader\TmxEllipse.h" />
@@ -205,6 +213,7 @@
     <ClInclude Include="PlayerRunningState.h" />
     <ClInclude Include="PlayerStandingState.h" />
     <ClInclude Include="PlayerState.h" />
+    <ClInclude Include="QuadTree.h" />
     <ClInclude Include="Scenes\DemoScene.h" />
   </ItemGroup>
   <ItemGroup>
