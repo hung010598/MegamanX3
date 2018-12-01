@@ -3,12 +3,13 @@
 #include "PlayerStandingState.h"
 #include "GameCollision.h"
 #include "GameDefine.h"
+#include "PlayerFallingOnWallState.h"
 
 PlayerFallingState::PlayerFallingState(PlayerData *playerData)
 {
 	this->mPlayerData = playerData;
-	acceleratorY = 15.0f;
-	acceleratorX = 8.0f;
+	acceleratorY = 10.0f;
+	acceleratorX = 3.0f;
 
 	if (this->mPlayerData->player->GetVx() == 0)
 	{
@@ -87,6 +88,7 @@ void PlayerFallingState::OnCollision(Entity *impactor, Entity::SideCollisions si
 		{
 			this->mPlayerData->player->AddPosition(data.RegionCollision.right - data.RegionCollision.left, 0);
 			this->mPlayerData->player->SetVx(0);
+			this->mPlayerData->player->SetState(new PlayerFallingOnWallState(this->mPlayerData));
 		}
 		break;
 
@@ -95,6 +97,7 @@ void PlayerFallingState::OnCollision(Entity *impactor, Entity::SideCollisions si
 		{
 			this->mPlayerData->player->AddPosition(-(data.RegionCollision.right - data.RegionCollision.left), 0);
 			this->mPlayerData->player->SetVx(0);
+			this->mPlayerData->player->SetState(new PlayerFallingOnWallState(this->mPlayerData));
 		}
 		break;
 
@@ -104,7 +107,7 @@ void PlayerFallingState::OnCollision(Entity *impactor, Entity::SideCollisions si
 	case Entity::Bottom:
 	case Entity::BottomRight:
 	case Entity::BottomLeft:
-		if (data.RegionCollision.right - data.RegionCollision.left >= 8.0f)
+		if (data.RegionCollision.right - data.RegionCollision.left >= Define::PLAYER_BOTTOM_RANGE_FALLING)
 		{
 			this->mPlayerData->player->AddPosition(0, -(data.RegionCollision.bottom - data.RegionCollision.top));
 
@@ -117,6 +120,8 @@ void PlayerFallingState::OnCollision(Entity *impactor, Entity::SideCollisions si
 				this->mPlayerData->player->SetState(new PlayerStandingState(this->mPlayerData));
 			}
 		}
+
+
 		return;
 
 	default:

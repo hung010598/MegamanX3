@@ -13,7 +13,11 @@ public:
 		Standing,
 		Running,
 		Falling,
+		FallingOnWall,
 		Jumping,
+		Shooting,
+		RunAndShoot,
+		Dashing,
 		Die
 	};
 

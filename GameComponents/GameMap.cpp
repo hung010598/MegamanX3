@@ -49,7 +49,7 @@ void GameMap::LoadMap(const char* filePath)
 		mListTileset.insert(pair<int, Sprite*>(i, sprite));
 	}
 
-	//khoi tao cac khoi Brick (vien gach)
+	
 
 
 #pragma region -OBJECTGROUP, STATIC OBJECT-
@@ -60,10 +60,11 @@ void GameMap::LoadMap(const char* filePath)
 
 		for (size_t j = 0; j < objectGroup->GetNumObjects(); j++)
 		{
+			
 			//lay object group chu khong phai layer
 			//object group se chua nhung body
 			Tmx::Object *object = objectGroup->GetObjects().at(j);
-
+			
 			Entity *entity = new Entity();
 			entity->SetPosition(object->GetX() + object->GetWidth() / 2,
 				object->GetY() + object->GetHeight() / 2);
@@ -74,6 +75,7 @@ void GameMap::LoadMap(const char* filePath)
 			mQuadTree->insertEntity(entity);
 		}
 	}
+	
 #pragma endregion
 }
 bool GameMap::isContain(RECT rect1, RECT rect2)

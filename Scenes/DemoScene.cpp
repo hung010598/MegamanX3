@@ -11,7 +11,7 @@ void DemoScene::LoadContent()
     //set mau backcolor cho scene o day la mau xanh
     mBackColor = 0x0b032d;
 
-	mMap = new GameMap("Resources/MegamanX3Map.tmx");
+	mMap = new GameMap("Resources/MegamanX3Map-1.tmx");
 
 	mCamera = new Camera(GameGlobal::GetWidth(), GameGlobal::GetHeight());
 	mCamera->SetPosition(GameGlobal::GetWidth() / 2, GameGlobal::GetHeight() / 2);
@@ -19,7 +19,7 @@ void DemoScene::LoadContent()
 	mMap->SetCamera(mCamera);
 
 	mPlayer = new Player();
-	mPlayer->SetPosition(GameGlobal::GetWidth()/2, 980);
+	mPlayer->SetPosition(100, 950);
 	mPlayer->SetCamera(mCamera);
 
 }
@@ -133,8 +133,8 @@ void DemoScene::checkCollision()
 	}
 
 	//Neu mario dung ngoai mep thi luc nay cho mario rot xuong duoi dat    
-	/*if (widthBottom < Define::PLAYER_BOTTOM_RANGE_FALLING)
+	 if(widthBottom < Define::PLAYER_BOTTOM_RANGE_FALLING)
 	{
 		mPlayer->OnNoCollisionWithBottom();
-	}*/
+	}
 }

@@ -7,6 +7,7 @@
 #include "GameComponents/Camera.h"
 #include "PlayerData.h"
 #include "PlayerState.h"
+#include "Entity.h"
 #include "PlayerRunningState.h"
 
 class Player : public Entity
@@ -50,26 +51,29 @@ public:
 
 	//true thi se lat nguoc anh theo truc y
 	void SetReverse(bool flag);
-
+	bool GetReverse() { return mCurrentReverse; };
 	bool allowMoveLeft;
 	bool allowMoveRight;
 
 protected:
-
-	Camera      *mCamera;
-
-	PlayerData *mPlayerData;
-
+	PlayerData  *mPlayerData;
+	Camera		*mCamera;
 	Animation   *mCurrentAnimation,
 		*mAnimationStanding,
+		*mAnimationFallingOnWall,
 		*mAnimationRunning,
-		*mAnimationJumping;
+		*mAnimationJumping,
+		*mAnimationDashing,
+		*mAnimationShooting,
+		*mAnimationRunShoot,
+		*mAnimationFalling;
 
 	void changeAnimation(PlayerState::StateName state);
 
 	PlayerState::StateName mCurrentState;
 
 	//chi cho phep jump khi nhan nhim space, muon nhay lai phai tha phim space roi nhan lai
-	bool allowJump, mCurrentReverse;;
+	bool allowJump, mCurrentReverse, allowDash, allowShoot;
+
 };
 

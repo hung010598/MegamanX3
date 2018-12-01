@@ -195,6 +195,18 @@
     <ClCompile Include="Map.cpp">
       <Filter>Framework\GameObjects\MapObjects</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerDashingState.cpp">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerFallingOnWallState.cpp">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerRunShootState.cpp">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerShootingState.cpp">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\GameGlobal.h">
@@ -334,6 +346,18 @@
     </ClInclude>
     <ClInclude Include="Map.h">
       <Filter>Framework\GameObjects\MapObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerDashingState.h">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerFallingOnWallState.h">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerRunShootState.h">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerShootingState.h">
+      <Filter>Framework\GameObjects\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -3,12 +3,13 @@
 #include "PlayerFallingState.h"
 #include "GameCollision.h"
 #include "GameDefine.h"
+#include "PlayerRunShootState.h"
 
 PlayerRunningState::PlayerRunningState(PlayerData *playerData)
 {
 	this->mPlayerData = playerData;
 
-	acceleratorX = 25.0f;
+	acceleratorX = 6.0f;
 
 	this->mPlayerData->player->allowMoveLeft = true;
 	this->mPlayerData->player->allowMoveRight = true;
@@ -21,6 +22,11 @@ PlayerRunningState::~PlayerRunningState()
 
 void PlayerRunningState::HandleKeyboard(std::map<int, bool> keys)
 {
+	if (keys[0x57])
+	{
+		this->mPlayerData->player->SetState(new PlayerRunShootState(this->mPlayerData));
+		return;
+	}
 	if (keys[VK_RIGHT])
 	{
 		if (mPlayerData->player->allowMoveRight)
@@ -57,6 +63,7 @@ void PlayerRunningState::HandleKeyboard(std::map<int, bool> keys)
 			}
 		}
 	}
+
 	else
 	{
 		this->mPlayerData->player->SetState(new PlayerStandingState(this->mPlayerData));

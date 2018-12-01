@@ -1,6 +1,7 @@
 #include "PlayerStandingState.h"
 #include "Player.h"
 #include "PlayerFallingState.h"
+#include "PlayerShootingState.h"
 #include "GameDefine.h"
 
 PlayerStandingState::PlayerStandingState(PlayerData *playerData)
@@ -23,9 +24,15 @@ void PlayerStandingState::HandleKeyboard(std::map<int, bool> keys)
 		this->mPlayerData->player->SetState(new PlayerRunningState(this->mPlayerData));
 		return;
 	}
+	if (keys[0x57])
+	{
+		this->mPlayerData->player->SetState(new PlayerShootingState(this->mPlayerData));
+		return;
+	}
 }
 
 PlayerState::StateName PlayerStandingState::GetState()
 {
 	return PlayerState::Standing;
 }
+
