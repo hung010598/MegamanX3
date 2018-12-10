@@ -78,6 +78,7 @@ void Animation::Update(float dt)
     {
         mCurrentTotalTime += dt;
     }
+
 }
 void Animation::Draw(D3DXVECTOR3 position, RECT sourceRect, D3DXVECTOR2 scale,
 	D3DXVECTOR2 transform, float angle, D3DXVECTOR2 rotationCenter, D3DXCOLOR colorKey)

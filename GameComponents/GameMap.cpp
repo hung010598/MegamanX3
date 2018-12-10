@@ -39,7 +39,7 @@ void GameMap::LoadMap(const char* filePath)
 	r.right = this->GetWidth();
 	r.bottom = this->GetHeight();
 
-	mQuadTree = new QuadTree(1, r);
+	mQuadTree = new QuadTree(1, r,0,0,0,0,0);
 
 	for (size_t i = 0; i < mMap->GetNumTilesets(); i++)
 	{
@@ -66,6 +66,10 @@ void GameMap::LoadMap(const char* filePath)
 			Tmx::Object *object = objectGroup->GetObjects().at(j);
 			
 			Entity *entity = new Entity();
+			entity->SetID(object->GetId());
+			entity->SetWidth(object->GetWidth());
+			entity->SetX(object->GetX());
+			entity->SetY(object->GetY());
 			entity->SetPosition(object->GetX() + object->GetWidth() / 2,
 				object->GetY() + object->GetHeight() / 2);
 			entity->SetWidth(object->GetWidth());
@@ -73,7 +77,9 @@ void GameMap::LoadMap(const char* filePath)
 			entity->Tag = Entity::EntityTypes::Static;
 
 			mQuadTree->insertEntity(entity);
+			
 		}
+		mQuadTree->save();
 	}
 	
 #pragma endregion

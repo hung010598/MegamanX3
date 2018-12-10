@@ -6,7 +6,7 @@
 
 PlayerShootingState::PlayerShootingState(PlayerData *playerData)
 {
-	this->mPlayerData = playerData;
+	this->mPlayerData = playerData;	
 	noPressed = false;
 }
 
@@ -22,7 +22,7 @@ void PlayerShootingState::Update(float dt)
 	{
 		this->mPlayerData->player->SetState(new PlayerStandingState(this->mPlayerData));
 	}
-
+	
 }
 
 void PlayerShootingState::HandleKeyboard(std::map<int, bool> keys)
@@ -40,7 +40,7 @@ void PlayerShootingState::HandleKeyboard(std::map<int, bool> keys)
 
 		noPressed = true;
 	}
-
+	
 }
 
 void PlayerShootingState::OnCollision(Entity *impactor, Entity::SideCollisions side, Entity::CollisionReturn data)

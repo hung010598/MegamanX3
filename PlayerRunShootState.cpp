@@ -9,7 +9,7 @@ PlayerRunShootState::PlayerRunShootState(PlayerData *playerData)
 {
 	this->mPlayerData = playerData;
 
-	acceleratorX = 6.0f;
+	acceleratorX = 4.0f;
 
 	this->mPlayerData->player->allowMoveLeft = true;
 	this->mPlayerData->player->allowMoveRight = true;
@@ -59,10 +59,10 @@ void PlayerRunShootState::HandleKeyboard(std::map<int, bool> keys)
 				}
 			}
 		}
-
-		else
+		
+		else 
 			this->mPlayerData->player->SetState(new PlayerStandingState(this->mPlayerData));
-
+		
 	}
 	else
 	{

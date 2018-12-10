@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.2.0" orientation="orthogonal" renderorder="right-down" width="262" height="150" tilewidth="64" tileheight="64" infinite="0" nextlayerid="3" nextobjectid="5">
+ <tileset firstgid="1" name="SNES - Mega Man X3 - Blast Hornet Stage" tilewidth="64" tileheight="64" tilecount="0" columns="257">
+  <image source="Resources/SNES - Mega Man X3 - Blast Hornet Stage.png" width="16496" height="8559"/>
+ </tileset>
+ <layer id="1" name="map" width="262" height="150">
+  <data encoding="base64" compression="zlib">
+   eJzt1EdyGwYABEE9VBYzASLnDAbJD/c8gCdX2bh0V80D9rI/fgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADcxq+fP37c1X091GM91XO91GsNalhvNapxTWpas5rXopa1qnVtalu72tehjnWqc13q+vPW64Hv3P3VJ9RDPdZTPddLvdaghvVWoxrXpKY1q3ktalmrWtemtrWrfR3qWKc616Wu9f7XrdcD37n/1SfUYz3Vc73Uaw1qWG81qnFNalqzmteilrWqdW1qW7va16GOdapzXepa7/Xx69brge883PUJ9VTP9VKvNahhvdWoxjWpac1qXota1qrWtalt7WpfhzrWqc51qWu910d93t16PfCdx/s+oZ7rpV5rUMN6q1GNa1LTmtW8FrWsVa1rU9va1b4OdaxTnetS13qvj/qsr/v/fB7wLzw99An1Uq81qGG91ajGNalpzWpei1rWqta1qW3tal+HOtapznWpa73XR33WV/1+uPV64DvPj31CvdaghvVWoxrXpKY1q3ktalmrWtemtrWrfR3qWKc616Wu9V4f9Vlf9bv+PN56PfCdl6c+oQY1rLca1bgmNa1ZzWtRy1rVuja1rV3t61DHOtW5LnWt9/qoz/qq3/Wn/n669XoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOD/9A/92tCB
+  </data>
+ </layer>
+ <objectgroup id="2" name="objects">
+  <object id="1" x="2" y="4670" width="676" height="448"/>
+  <object id="2" x="680" y="4878" width="330" height="240"/>
+  <object id="3" x="1012" y="4778" width="264" height="340"/>
+ </objectgroup>
+</map>

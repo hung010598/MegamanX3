@@ -18,6 +18,9 @@ public:
 		Shooting,
 		RunAndShoot,
 		Dashing,
+		JumpShoot,
+		DashShoot,
+		ShootOnWall,
 		Die
 	};
 

@@ -3,6 +3,7 @@
 #include "PlayerStandingState.h"
 #include "GameCollision.h"
 #include "GameDefine.h"
+#include "PlayerShootOnWallState.h"
 #include "PlayerJumpingState.h"
 
 PlayerFallingOnWallState::PlayerFallingOnWallState(PlayerData *playerData)
@@ -30,7 +31,12 @@ void PlayerFallingOnWallState::Update(float dt)
 
 void PlayerFallingOnWallState::HandleKeyboard(std::map<int, bool> keys)
 {
-	// Player se bat ra mot doan khi nhan nhay
+	// Player se bat ra mot doan khi nhan 
+	if (keys[0x57])
+	{
+		this->mPlayerData->player->SetState(new PlayerShootOnWallState(this->mPlayerData));
+		return;
+	}
 	if (keys[VK_SPACE]) {
 		this->mPlayerData->player->AddVy(Define::PLAYER_MAX_JUMP_VELOCITY);
 
@@ -38,7 +44,7 @@ void PlayerFallingOnWallState::HandleKeyboard(std::map<int, bool> keys)
 			this->mPlayerData->player->AddVx(Define::PLAYER_MAX_RUNNING_SPEED / 2);
 		else
 			this->mPlayerData->player->AddVx(-Define::PLAYER_MAX_RUNNING_SPEED / 2);
-
+		
 		this->mPlayerData->player->SetState(new PlayerJumpingState(this->mPlayerData));
 	}
 }
@@ -76,9 +82,9 @@ void PlayerFallingOnWallState::OnCollision(Entity *impactor, Entity::SideCollisi
 		{
 			this->mPlayerData->player->AddPosition(0, -(data.RegionCollision.bottom - data.RegionCollision.top));
 
-
+			
 			this->mPlayerData->player->SetState(new PlayerStandingState(this->mPlayerData));
-
+			
 		}
 		return;
 

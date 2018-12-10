@@ -1,6 +1,7 @@
 #pragma once
 #include "Player.h"
 #include "PlayerState.h"
+#include "GameComponents/Animation.h"
 
 class PlayerJumpingState : public PlayerState
 {

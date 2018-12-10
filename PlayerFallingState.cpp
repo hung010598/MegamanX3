@@ -1,6 +1,7 @@
 #include "PlayerFallingState.h"
 #include "Player.h"
 #include "PlayerStandingState.h"
+#include "PlayerJumpShootState.h"
 #include "GameCollision.h"
 #include "GameDefine.h"
 #include "PlayerFallingOnWallState.h"
@@ -33,11 +34,16 @@ void PlayerFallingState::Update(float dt)
 	if (mPlayerData->player->GetVy() > Define::PLAYER_MAX_JUMP_VELOCITY)
 	{
 		mPlayerData->player->SetVy(Define::PLAYER_MAX_JUMP_VELOCITY);
-	}
+}
 }
 
 void PlayerFallingState::HandleKeyboard(std::map<int, bool> keys)
 {
+	if (keys[0x57])
+	{
+		this->mPlayerData->player->SetState(new PlayerJumpShootState(this->mPlayerData));
+		return;
+	}
 	if (keys[VK_RIGHT])
 	{
 		mPlayerData->player->SetReverse(false);
@@ -121,7 +127,7 @@ void PlayerFallingState::OnCollision(Entity *impactor, Entity::SideCollisions si
 			}
 		}
 
-
+		
 		return;
 
 	default:

@@ -1,13 +1,14 @@
 #include "PlayerDashingState.h"
 #include "PlayerStandingState.h"
 #include "PlayerFallingState.h"
+#include "PlayerDashShootState.h"
 #include "GameDefine.h"
 
 PlayerDashingState::PlayerDashingState(PlayerData *playerData)
 {
 	this->mPlayerData = playerData;
 
-	acceleratorX = 6.0f;
+	acceleratorX = 4.0f;
 
 	noPressed = false;
 }
@@ -31,7 +32,7 @@ void PlayerDashingState::Update(float dt)
 			this->mPlayerData->player->AddVx(acceleratorX);
 		}
 	}
-
+	
 	if (this->mPlayerData->player->GetVx() <= -Define::PLAYER_MAX_DASHING_SPEED ||
 		this->mPlayerData->player->GetVx() >= Define::PLAYER_MAX_DASHING_SPEED)
 	{
@@ -42,6 +43,11 @@ void PlayerDashingState::Update(float dt)
 
 void PlayerDashingState::HandleKeyboard(std::map<int, bool> keys)
 {
+	if (keys[0x57])
+	{
+		this->mPlayerData->player->SetState(new PlayerDashShootState(this->mPlayerData));
+		return;
+	}
 	if (keys[0x51])
 	{
 		if (mPlayerData->player->getMoveDirection() == Player::MoveToLeft)

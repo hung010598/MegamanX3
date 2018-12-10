@@ -64,6 +64,9 @@
     <Filter Include="Framework\GameComponents\Collision">
       <UniqueIdentifier>{85f2401a-2e31-49c4-abf1-ce742c88ec27}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Framework\GameComponents\QuadTree\QuadNode">
+      <UniqueIdentifier>{2063730b-6ee8-48c8-8ec9-b6fad5e19b42}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -162,27 +165,6 @@
     <ClCompile Include="Entity.cpp">
       <Filter>Framework\GameObjects</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerState.cpp">
-      <Filter>Framework\GameObjects\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerData.cpp">
-      <Filter>Framework\GameObjects\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Framework\GameObjects\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerStandingState.cpp">
-      <Filter>Framework\GameObjects\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerRunningState.cpp">
-      <Filter>Framework\GameObjects\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerJumpingState.cpp">
-      <Filter>Framework\GameObjects\Player</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerFallingState.cpp">
-      <Filter>Framework\GameObjects\Player</Filter>
-    </ClCompile>
     <ClCompile Include="GameObject.cpp">
       <Filter>Framework\GameObjects\MapObjects</Filter>
     </ClCompile>
@@ -195,16 +177,49 @@
     <ClCompile Include="Map.cpp">
       <Filter>Framework\GameObjects\MapObjects</Filter>
     </ClCompile>
+    <ClCompile Include="Quadnode.cpp">
+      <Filter>Framework\GameComponents\QuadTree\QuadNode</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClCompile>
     <ClCompile Include="PlayerDashingState.cpp">
       <Filter>Framework\GameObjects\Player</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerDashShootState.cpp">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClCompile>
     <ClCompile Include="PlayerFallingOnWallState.cpp">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerFallingState.cpp">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerJumpingState.cpp">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerJumpShootState.cpp">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerRunningState.cpp">
       <Filter>Framework\GameObjects\Player</Filter>
     </ClCompile>
     <ClCompile Include="PlayerRunShootState.cpp">
       <Filter>Framework\GameObjects\Player</Filter>
     </ClCompile>
     <ClCompile Include="PlayerShootingState.cpp">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerShootOnWallState.cpp">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerStandingState.cpp">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerState.cpp">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerData.cpp">
       <Filter>Framework\GameObjects\Player</Filter>
     </ClCompile>
   </ItemGroup>
@@ -311,29 +326,8 @@
     <ClInclude Include="Entity.h">
       <Filter>Framework\GameObjects</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>Framework\GameObjects\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerState.h">
-      <Filter>Framework\GameObjects\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerData.h">
-      <Filter>Framework\GameObjects\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerStandingState.h">
-      <Filter>Framework\GameObjects\Player</Filter>
-    </ClInclude>
     <ClInclude Include="GameDefine.h">
       <Filter>Framework\GameComponents</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerRunningState.h">
-      <Filter>Framework\GameObjects\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerJumpingState.h">
-      <Filter>Framework\GameObjects\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="PlayerFallingState.h">
-      <Filter>Framework\GameObjects\Player</Filter>
     </ClInclude>
     <ClInclude Include="GameObject.h">
       <Filter>Framework\GameObjects\MapObjects</Filter>
@@ -347,16 +341,49 @@
     <ClInclude Include="Map.h">
       <Filter>Framework\GameObjects\MapObjects</Filter>
     </ClInclude>
+    <ClInclude Include="Quadnode.h">
+      <Filter>Framework\GameComponents\QuadTree\QuadNode</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClInclude>
     <ClInclude Include="PlayerDashingState.h">
       <Filter>Framework\GameObjects\Player</Filter>
     </ClInclude>
+    <ClInclude Include="PlayerDashShootState.h">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerData.h">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClInclude>
     <ClInclude Include="PlayerFallingOnWallState.h">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerFallingState.h">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerJumpingState.h">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerJumpShootState.h">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerRunningState.h">
       <Filter>Framework\GameObjects\Player</Filter>
     </ClInclude>
     <ClInclude Include="PlayerRunShootState.h">
       <Filter>Framework\GameObjects\Player</Filter>
     </ClInclude>
     <ClInclude Include="PlayerShootingState.h">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerShootOnWallState.h">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerStandingState.h">
+      <Filter>Framework\GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerState.h">
       <Filter>Framework\GameObjects\Player</Filter>
     </ClInclude>
   </ItemGroup>

@@ -2,13 +2,14 @@
 #include "PlayerStandingState.h"
 #include "PlayerFallingState.h"
 #include "PlayerFallingOnWallState.h"
+#include "PlayerJumpShootState.h"
+#include "Entity.h"
 #include "GameDefine.h"
 
 PlayerJumpingState::PlayerJumpingState(PlayerData *playerData)
 {
 	this->mPlayerData = playerData;
 	this->mPlayerData->player->SetVy(Define::PLAYER_MIN_JUMP_VELOCITY);
-
 	acceleratorY = 13.0f;
 	acceleratorX = 12.0f;
 
@@ -60,7 +61,13 @@ void PlayerJumpingState::Update(float dt)
 }
 
 void PlayerJumpingState::HandleKeyboard(std::map<int, bool> keys)
-{
+{	
+	if (keys[0x57])
+	{
+		this->mPlayerData->player->SetState(new PlayerJumpShootState(this->mPlayerData));
+		return;
+	}
+
 	if (keys[VK_RIGHT])
 	{
 		mPlayerData->player->SetReverse(false);

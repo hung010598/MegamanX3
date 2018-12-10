@@ -160,15 +160,19 @@
     <ClCompile Include="MapReader\TmxUtil.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayerDashingState.cpp" />
+    <ClCompile Include="PlayerDashShootState.cpp" />
     <ClCompile Include="PlayerData.cpp" />
     <ClCompile Include="PlayerFallingOnWallState.cpp" />
     <ClCompile Include="PlayerFallingState.cpp" />
     <ClCompile Include="PlayerJumpingState.cpp" />
+    <ClCompile Include="PlayerJumpShootState.cpp" />
     <ClCompile Include="PlayerRunningState.cpp" />
     <ClCompile Include="PlayerRunShootState.cpp" />
     <ClCompile Include="PlayerShootingState.cpp" />
+    <ClCompile Include="PlayerShootOnWallState.cpp" />
     <ClCompile Include="PlayerStandingState.cpp" />
     <ClCompile Include="PlayerState.cpp" />
+    <ClCompile Include="Quadnode.cpp" />
     <ClCompile Include="QuadTree.cpp" />
     <ClCompile Include="Scenes\DemoScene.cpp" />
   </ItemGroup>
@@ -212,15 +216,19 @@
     <ClInclude Include="MapReader\zlib.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayerDashingState.h" />
+    <ClInclude Include="PlayerDashShootState.h" />
     <ClInclude Include="PlayerData.h" />
     <ClInclude Include="PlayerFallingOnWallState.h" />
     <ClInclude Include="PlayerFallingState.h" />
     <ClInclude Include="PlayerJumpingState.h" />
+    <ClInclude Include="PlayerJumpShootState.h" />
     <ClInclude Include="PlayerRunningState.h" />
     <ClInclude Include="PlayerRunShootState.h" />
     <ClInclude Include="PlayerShootingState.h" />
+    <ClInclude Include="PlayerShootOnWallState.h" />
     <ClInclude Include="PlayerStandingState.h" />
     <ClInclude Include="PlayerState.h" />
+    <ClInclude Include="Quadnode.h" />
     <ClInclude Include="QuadTree.h" />
     <ClInclude Include="Scenes\DemoScene.h" />
   </ItemGroup>

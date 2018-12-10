@@ -1,11 +1,19 @@
 #include "Entity.h"
 #include "GameCollision.h"
 
+
 Entity::Entity()
 {
 	Tag = None;
 }
-
+Entity::Entity(float id,float x,float y,float width,float height)
+{
+	this->id = id;
+	this->x = x;
+	this->y = y;
+	this->width = width;
+	this->height = height;
+}
 D3DXVECTOR3 Entity::GetPosition()
 {
 	return D3DXVECTOR3(posX, posY,0);
@@ -72,7 +80,14 @@ void Entity::AddPosition(float x, float y)
 {
 	AddPosition(D3DXVECTOR3(x, y, 0));
 }
-
+void Entity::SetID(int ID)
+{
+	this->id = ID;
+}
+int Entity::GetID()
+{
+	return id;
+}
 void Entity::SetWidth(int width)
 {
 	this->width = width;
@@ -92,7 +107,22 @@ int Entity::GetHeight()
 {
 	return height;
 }
-
+void Entity::SetX(int X)
+{
+	this->x = X;
+}
+int Entity::GetX()
+{
+	return x;
+}
+void Entity::SetY(int Y)
+{
+	this->y = Y;
+}
+int Entity::GetY()
+{
+	return y;
+}
 float Entity::GetVx()
 {
 	return vx;

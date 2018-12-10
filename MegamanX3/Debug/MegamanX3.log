@@ -1,0 +1,14 @@
+﻿  GameMap.cpp
+d:\downloads\documents\hk1(2018-2019)\nm phát triển game\megaman\megamanx3\gamecomponents\gamemap.cpp(44): warning C4018: '<': signed/unsigned mismatch
+d:\downloads\documents\hk1(2018-2019)\nm phát triển game\megaman\megamanx3\gamecomponents\gamemap.cpp(57): warning C4018: '<': signed/unsigned mismatch
+d:\downloads\documents\hk1(2018-2019)\nm phát triển game\megaman\megamanx3\gamecomponents\gamemap.cpp(61): warning C4018: '<': signed/unsigned mismatch
+d:\downloads\documents\hk1(2018-2019)\nm phát triển game\megaman\megamanx3\gamecomponents\gamemap.cpp(70): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\downloads\documents\hk1(2018-2019)\nm phát triển game\megaman\megamanx3\gamecomponents\gamemap.cpp(69): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+d:\downloads\documents\hk1(2018-2019)\nm phát triển game\megaman\megamanx3\gamecomponents\gamemap.cpp(164): warning C4018: '<': signed/unsigned mismatch
+d:\downloads\documents\hk1(2018-2019)\nm phát triển game\megaman\megamanx3\gamecomponents\gamemap.cpp(173): warning C4018: '<': signed/unsigned mismatch
+d:\downloads\documents\hk1(2018-2019)\nm phát triển game\megaman\megamanx3\gamecomponents\gamemap.cpp(185): warning C4018: '<': signed/unsigned mismatch
+d:\downloads\documents\hk1(2018-2019)\nm phát triển game\megaman\megamanx3\gamecomponents\gamemap.cpp(187): warning C4018: '<': signed/unsigned mismatch
+d:\downloads\documents\hk1(2018-2019)\nm phát triển game\megaman\megamanx3\gamecomponents\gamemap.cpp(205): warning C4244: 'argument': conversion from 'size_t' to 'FLOAT', possible loss of data
+d:\downloads\documents\hk1(2018-2019)\nm phát triển game\megaman\megamanx3\gamecomponents\gamemap.cpp(210): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
+d:\downloads\documents\hk1(2018-2019)\nm phát triển game\megaman\megamanx3\gamecomponents\gamemap.cpp(211): warning C4244: '=': conversion from 'float' to 'LONG', possible loss of data
+  MegamanX3.vcxproj -> D:\Downloads\Documents\HK1(2018-2019)\NM Phát Triển Game\Megaman\Debug\MegamanX3.exe

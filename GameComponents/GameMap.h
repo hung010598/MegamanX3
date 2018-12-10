@@ -13,7 +13,7 @@
 #include "../GameCollision.h"
 #include "../QuadTree.h"
 #include "../Map.h"
-
+#include "../Entity.h"
 class GameMap
 {
 public:
@@ -46,7 +46,8 @@ private:
 	std::map<int, Sprite*>          mListTileset;
 	LPD3DXSPRITE                    mSpriteHandler;
 	Camera                          *mCamera;
-	QuadTree                        *mQuadTree;
+	QuadTree                        *mQuadTree, *n;
+	
 	std::vector<Map*>               mListMap;
 
 	

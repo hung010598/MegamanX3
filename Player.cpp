@@ -2,6 +2,7 @@
 #include "PlayerStandingState.h"
 #include "PlayerJumpingState.h"
 #include "PlayerFallingState.h"
+#include "PlayerFallingOnWallState.h"
 #include "PlayerDashingState.h"
 #include "PlayerRunShootState.h"
 #include "PlayerShootingState.h"
@@ -14,8 +15,12 @@ Player::Player()
 	mAnimationRunning = new Animation("Resources/megaman/runningright.png", 11, 1, 11, 0.03f);
 	mAnimationDashing = new Animation("Resources/megaman/dashingright_1.png", 1, 1, 1, 0);
 	mAnimationFallingOnWall = new Animation("Resources/megaman/Falling-On-Wall-Right-1.png", 1, 1, 1, 0);
+	mAnimationDashShoot = new Animation("Resources/megaman/Dash-Shoot-Right.png", 1, 1, 1, 0);
 	mAnimationShooting = new Animation("Resources/megaman/Shooting-Right.png", 2, 1, 2, 0.15f);
 	mAnimationRunShoot = new Animation("Resources/megaman/Shoot-And-Run-Right.png", 11, 1, 11, 0.03f);
+	mAnimationJumpShoot = new Animation("Resources/megaman/Jump-Shoot-Right.png", 1, 1, 1, 0);
+	mAnimationShootOnWall = new Animation("Resources/megaman/Shoot-On-Wall.png", 1, 1, 1, 0);
+
 
 	this->mPlayerData = new PlayerData();
 	this->mPlayerData->player = this;
@@ -80,6 +85,7 @@ void Player::OnKeyPressed(int key)
 		}
 	}
 
+	
 
 }
 
@@ -93,8 +99,26 @@ void Player::OnKeyUp(int key)
 	// Tha nut W de ban
 	if (key == 0x57)
 	{
-		if (mCurrentState == PlayerState::RunAndShoot)
+		switch (mCurrentState)
+		{
+		case PlayerState::RunAndShoot:
 			this->SetState(new PlayerRunningState(this->mPlayerData));
+			break;
+		case PlayerState::JumpShoot:
+			this->SetState(new PlayerFallingState(this->mPlayerData));
+			break;
+		case PlayerState::DashShoot:
+			this->SetState(new PlayerStandingState(this->mPlayerData));
+			break;
+		case PlayerState::ShootOnWall:
+			this->SetState(new PlayerFallingOnWallState(this->mPlayerData));
+			break;
+		case PlayerState::Die:
+			break;
+		default:
+			break;
+		}
+		
 	}
 
 
@@ -193,6 +217,15 @@ void Player::changeAnimation(PlayerState::StateName state)
 		break;
 	case PlayerState::RunAndShoot:
 		mCurrentAnimation = mAnimationRunShoot;
+		break;
+	case PlayerState::JumpShoot:
+		mCurrentAnimation = mAnimationJumpShoot;
+		break;
+	case PlayerState::DashShoot:
+		mCurrentAnimation = mAnimationDashShoot;
+		break;
+	case PlayerState::ShootOnWall:
+		mCurrentAnimation = mAnimationShootOnWall;
 		break;
 	}
 

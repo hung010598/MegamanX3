@@ -18,3 +18,4 @@ protected:
 	float acceleratorX;
 	bool noPressed;
 };
+

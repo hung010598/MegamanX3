@@ -10,7 +10,7 @@ class Entity
 public:
 
 	Entity();
-
+	Entity(float id,float x,float y,float width,float height);
 	enum SideCollisions
 	{
 		Left, //0
@@ -51,13 +51,22 @@ public:
 
 	virtual void AddPosition(float x, float y);
 
-	virtual void SetWidth(int width);
+	void SetID(int ID);
 
-	virtual int GetWidth();
+	int GetID();
 
-	virtual void SetHeight(int height);
+	void SetWidth(int width);
 
-	virtual int GetHeight();
+	int GetWidth();
+
+	void SetHeight(int height);
+
+	int GetHeight();
+
+	void SetX(int X);
+	int GetX();
+	void SetY(int Y);
+	int GetY();
 
 	virtual float GetVx();
 
@@ -78,7 +87,9 @@ public:
 	//kiem soat viec va cham
 	//khi xay ra va cham voi 1 thuc the nao do thi ham nay se dc goi de xu ly
 	virtual void OnCollision(Entity *impactor, CollisionReturn data, SideCollisions side);
-
+	float id;
+	float width, height;
+	float x, y;
 protected:
 
 	//duoc goi khi set position cua Entity, dung cho ke thua
@@ -91,5 +102,6 @@ protected:
 	float vx, vy;
 
 	//size cua entity
-	float width, height;
+	
+	
 };

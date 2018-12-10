@@ -59,14 +59,17 @@ protected:
 	PlayerData  *mPlayerData;
 	Camera		*mCamera;
 	Animation   *mCurrentAnimation,
-		*mAnimationStanding,
-		*mAnimationFallingOnWall,
-		*mAnimationRunning,
-		*mAnimationJumping,
-		*mAnimationDashing,
-		*mAnimationShooting,
-		*mAnimationRunShoot,
-		*mAnimationFalling;
+				*mAnimationStanding,
+				*mAnimationFallingOnWall,
+				*mAnimationRunning,
+				*mAnimationJumping,
+				*mAnimationDashing,
+				*mAnimationShooting,
+				*mAnimationRunShoot,
+				*mAnimationDashShoot,
+				*mAnimationJumpShoot,
+				*mAnimationShootOnWall,
+				*mAnimationFalling;
 
 	void changeAnimation(PlayerState::StateName state);
 
